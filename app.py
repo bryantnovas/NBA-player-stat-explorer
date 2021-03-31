@@ -66,7 +66,6 @@ if selected_chart == 'Heatmap':
     df_selected_team.to_csv('output.csv',index=False)
     df = pd.read_csv('output.csv')
     df = df.drop('Year', axis=1)
-
     corr = df.corr()
     mask = np.zeros_like(corr)
     mask[np.triu_indices_from(mask)] = True
@@ -91,4 +90,4 @@ elif selected_chart == 'Histogram':
     plt.hist(df['Age'])
     plt.title('Players Age Histogram')
     plt.xlabel('Player Ages')
-st.pyplot()
+    st.pyplot()
